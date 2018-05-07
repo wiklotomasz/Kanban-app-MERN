@@ -1,6 +1,10 @@
 import Lane from '../models/lane';
 import uuid from 'uuid';
 
+export function getSomething(req, res) {
+	return res.status(200).end();
+}
+
 export function addLane(req, res) {
 	if (!req.body.name) {
 		res.status(403).end();
@@ -32,6 +36,17 @@ export function deleteLane(req, res) {
 		}
 
 		lane.remove(() => {
+			res.status(200).end();
+		});
+	});
+}
+export function editLane(req, res) {
+	Lane.findOne({ id: req.params.laneId }.exec((err, lane) => {
+			if(err) {
+				res.status(500).send(err);
+			}
+		lane.set({name: req.body.name});
+		lane.save(() => {
 			res.status(200).end();
 		});
 	});
