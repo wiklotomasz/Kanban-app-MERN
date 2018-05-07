@@ -37,10 +37,10 @@ export function deleteLane(req, res) {
 	});
 }
 export function editLane(req, res) {
-	Lane.findOne({ id: req.params.laneId }.exec((err, lane) => {
-			if(err) {
-				res.status(500).send(err);
-			}
+	Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
+		if(err) {
+			res.status(500).send(err);
+		}
 		lane.set({name: req.body.name});
 		lane.save(() => {
 			res.status(200).end();

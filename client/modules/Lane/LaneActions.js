@@ -14,21 +14,21 @@ export function createLane(lane) {
     lane: {
       id: uuid(),
       notes: [],
-      ...lane,
+      ...lane
     }
   };
 }
 export function updateLane(lane) {
   return {
     type: UPDATE_LANE,
-    lane,
+    lane
   };
 }
 
 export function deleteLane(laneId) {
   return {
     type: DELETE_LANE,
-    laneId
+    laneId,
   };
 }
 

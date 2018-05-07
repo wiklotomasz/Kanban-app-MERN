@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 // Import Style
 import styles from './Note.css';
 
-class Note = props =>
+const Note = props =>
 	<li className={styles.Note}>{props.children}</li>;
 
 	Note.propTypes = {
