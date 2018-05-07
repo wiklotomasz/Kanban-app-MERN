@@ -4,7 +4,7 @@ import NotesContainer from '../Note/NotesContainer';
 // Import Style
 import styles from './Lane.css';
 
-class Lane = (props) => {
+const Lane = (props) => {
 	const { lane, laneNotes, updateLane, addNote, deleteLane } = props;
 	  const laneId = lane.id;
 
