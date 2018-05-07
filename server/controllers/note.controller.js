@@ -2,10 +2,6 @@ import Note from '../models/note';
 import Lane from '../models/lane';
 import uuid from 'uuid';
 
-export function getSomething(req, res) {
-  return res.status(200).end();
-}
-
 export function addNote(req, res) {
   const { note, laneId } = req.body;
 
@@ -38,6 +34,17 @@ export function deleteNote(req, res) {
 			res.status(500).send(err);
 		}
 		note.remove(() => {
+			res.status(200).end();
+		});
+	});
+}
+export function editNote(req, res) {
+	Note.findOne({ id: req.params.noteId }.exec((err, note) => {
+			if(err) {
+				res.status(500).send(err);
+			}
+		note.set({task: req.body.task});
+		note.save(() => {
 			res.status(200).end();
 		});
 	});
