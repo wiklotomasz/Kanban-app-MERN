@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import callApi from '../../util/apiCaller';
 import { lanes } from '../../util/schema';
 import { normalize } from 'normalizr';
@@ -18,10 +17,16 @@ export function createLane(lane) {
   return {
     type: CREATE_LANE,
     lane: {
-      id: uuid(),
       notes: [],
       ...lane
     }
+  };
+}
+export function createLaneRequest(lane) {
+  return (dispatch) => {
+    return callApi('lanes', 'post', lane).then(res => {
+      dispatch(createLane(res));
+    });
   };
 }
 export function updateLane(lane) {
