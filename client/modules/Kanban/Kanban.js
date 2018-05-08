@@ -40,5 +40,3 @@ export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   DragDropContext(HTML5Backend)
 )(Kanban);
-
-
