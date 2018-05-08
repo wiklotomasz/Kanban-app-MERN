@@ -2,6 +2,7 @@
 .Notes {
     list-style: none;
     margin-top: 15px;
+    border-color: 1px solid red;
 }
 
 .Notes > div > div {
@@ -16,9 +17,10 @@
 }
 
 .Notes span {
-    color: #595959;
+    color: #fff;
     font-style: italic;
     font-weight: 400;
+    
 }
 
 .Notes button {
@@ -34,6 +36,7 @@
     cursor: pointer;
     border: 2px solid #ff9900;
     transition: ease-in .3s;
+    margin-bottom: 2%;
 }
 
 .Notes button:hover {

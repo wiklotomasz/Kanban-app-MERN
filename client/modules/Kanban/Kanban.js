@@ -8,11 +8,12 @@ import HTML5Backend from 'react-dnd-html5-backend';
 import { compose } from 'redux';
 
 // Import Style
-import styles from '../Lane/Lane.css';
+import styles from './Kanban.css';
 
 const Kanban = (props) => (
 	<div>
 	    <button
+	    	className={styles.AddLane}
 		    onClick={() => props.createLane({
 		    	name: 'New lane'
 		    })}
