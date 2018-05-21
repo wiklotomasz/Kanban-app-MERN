@@ -13,9 +13,9 @@ export default function notes(state = initialState, action) {
   		return { ...state, [action.note.id]: action.note };
   	case DELETE_NOTE:
   		return omit(state, action.noteId);
-  	case EDIT_NOTE: {
-  		const note = { ...state[action.id], editing: true };
-      return { ...state, [action.id]: note };
+    case EDIT_NOTE: {
+      const note = { ...state[action.noteId], editing: true };
+      return { ...state, [action.noteId]: note };
     }
     case CREATE_NOTES:
       return { ...action.notes };
